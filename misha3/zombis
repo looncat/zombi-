@@ -6,7 +6,7 @@ win_height = 500
 window = display.set_mode((win_width, win_height))
 display.set_caption("shooter")
 background = transform.scale(image.load("fons.jpg"), (win_width, win_height))
-FPS = 240
+FPS = 100
 clock = time.Clock()
 game = True
 mixer.init()
@@ -58,7 +58,7 @@ class Enemy2(GameSprite):
 ship = Player('chel.png',250,400,10,65,65)
 monsters = sprite.Group()
 for i in range(5):
-    monster = Enemy('zombi.png', randint(80,620),0,randint(1,5),90,65)
+    monster = Enemy('zombi.png', randint(80,620),0,randint(0,2),90,65)
     monsters.add(monster)
 font.init()
 font1 = font.SysFont('Arial', 40)
@@ -68,7 +68,7 @@ lose = font1.render('YOU LOST', True,(180, 200 ,200))
 bullets = sprite.Group()
 asteroids = sprite.Group()
 for i in range(2):
-    asteroid = Enemy2('titan.png', randint(80,620),0,randint(1,5),90,65)
+    asteroid = Enemy2('titan.png', randint(80,620),0,randint(0,2),90,65)
     asteroids.add(asteroid)
 life = 5
 
